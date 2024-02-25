@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.graphql.model.Book;
+import com.spring.graphql.model.Root;
 import com.spring.graphql.service.BookService;
 import com.spring.graphql.service.BookServiceUsingWebClient;
 
@@ -29,7 +30,27 @@ public class BookController {
 	public Mono<List<Book>> getBooks(){
 		
 		return bookService.getBooks();
-		//return bookServiceUsingWebClient.callBookService();
+	}
+	
+	
+	
+	@GetMapping("/booksweb")
+	public Mono<Root> getBooksWebClient(){
+		
+		return bookServiceUsingWebClient.callBookService();
+	}
+	
+	
+	@GetMapping("/booksAllWeb")
+	public Mono<Root> getBooksAll(){
+		
+		return bookServiceUsingWebClient.callBookServiceAll();
+	}
+	
+	@GetMapping("/booksVeriableWeb")
+	public Mono<Root> getBooksAllVeriable(){
+		
+		return bookServiceUsingWebClient.getBooksAllVeriable();
 	}
 
 	

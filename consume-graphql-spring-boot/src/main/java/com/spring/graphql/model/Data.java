@@ -6,4 +6,5 @@ import java.util.List;
 public class Data {
 
 	public ArrayList<Book> allBooks;
+	public Book getBook;
 }
