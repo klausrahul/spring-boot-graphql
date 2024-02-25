@@ -24,7 +24,12 @@ public class BookController {
 	public ArrayList<Book> getBooks(){
 		
 		 return bookService.getBooks();
-		//return bookServiceUsingWebClient.callBookService();
+	}
+	
+	@GetMapping("/booksid")
+	public Book getBooksId(){
+		
+		 return bookService.getBooksId();
 	}
 
 }
